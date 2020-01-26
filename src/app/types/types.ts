@@ -3,6 +3,7 @@ export interface GroupEvent {
   description: string;
   persons: Person[];
   expanses: Expanse[];
+  uuid: string;
 }
 
 export interface Person {
@@ -13,6 +14,7 @@ export interface Person {
 export interface Share {
   person: Person;
   portion: number;
+  uuid: string;
 }
 
 export interface Expanse {
@@ -21,4 +23,5 @@ export interface Expanse {
   price: number;
   date: Date;
   description: string;
+  uuid: string;
 }
