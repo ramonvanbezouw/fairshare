@@ -21,7 +21,7 @@ export class DataService {
                                                                      .pipe(shareReplay(1));
 
   constructor() {
-
+    this.load();
   }
 
   private save() {
