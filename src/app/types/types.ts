@@ -2,8 +2,13 @@ export interface GroupEvent {
   name: string;
   description: string;
   persons: Person[];
-  expanses: Expanse[];
+  expenses: Expense[];
   uuid: string;
+}
+
+export interface ExpensePersonCredit  {
+  person: Person;
+  credit: number;
 }
 
 export interface Person {
@@ -17,7 +22,7 @@ export interface Share {
   uuid: string;
 }
 
-export interface Expanse {
+export interface Expense {
   payer: Person;
   shares: Share[];
   price: number;

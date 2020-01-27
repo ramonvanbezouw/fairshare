@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
 html {
   width:100vw;
@@ -6,4 +7,18 @@ html {
   background: linear-gradient(to bottom left, #0f4c82, #023d66);
   color:#eee;
   font-family: 'Fira Sans', sans-serif;
+}
+.price {
+  font-family: 'Fira Code', monospace;
+  background:#fff;
+  text-align:right;
+  border-radius:0.25rem;
+  padding:0.25rem;
+  margin:0.25rem 0;
+  &.negative {
+    color: #820f0f;
+  }
+  &.positive {
+    color: #0f8219;
+  }
 }
