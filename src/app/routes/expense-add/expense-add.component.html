@@ -1,0 +1,12 @@
+<h2>Adding expense to {{(data.groupEvent$ | async).name}}</h2>
+<h3>Cost</h3>
+<input type="number" [(ngModel)]="expense.price"/>
+<ng-container *ngFor="let s of expense.shares">
+  <h4>{{s.person.name}}</h4>
+  <input type="range" [(ngModel)]="s.portion" min="0" max="1" step="0.1">
+</ng-container>
+<br/>
+<br/>
+<br/>
+<br/>
+<button (click)="add()">SUBMIT</button>

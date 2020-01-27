@@ -1,4 +1,4 @@
-import { Expense, ExpensePersonCredit } from 'src/app/types/types';
+import { Expense, ExpensePersonCredit, GroupEvent } from 'src/app/types/types';
 
 export const shareExpense = (expense: Expense): ExpensePersonCredit[] => {
   // count the portions
@@ -10,4 +10,16 @@ export const shareExpense = (expense: Expense): ExpensePersonCredit[] => {
   // make sure the one who pays get credit due
   credits.find(c => c.person.uuid === expense.payer.uuid).credit += expense.price;
   return credits;
+};
+
+export const endCredit = (groupEvent: GroupEvent): ExpensePersonCredit[] => {
+  const startValues: ExpensePersonCredit[] = groupEvent.persons.map(person => ({ person, credit: 0 }));
+  const expenseCredits: ExpensePersonCredit[][] = groupEvent.expenses.map(e => shareExpense(e));
+  expenseCredits.forEach(expenseCredit => {
+    expenseCredit.forEach(expense => {
+      const match = this.startValues.find(expensePerson => expense.person.uuid === expensePerson.person.uuid);
+      match.credit += match.credit;
+    });
+  });
+  return startValues;
 };

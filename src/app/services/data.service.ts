@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
-import { GroupEvent } from 'src/app/types/types';
-import { v4 as uuid } from 'uuid';
+import { GroupEvent, Expense } from 'src/app/types/types';
 
 const lsGroupEvents = 'groupEvents';
 const lsCurrentGroupEvent = 'currentGroup';
@@ -16,12 +15,21 @@ export class DataService {
   public groupEvents$: Observable<GroupEvent[]> = this.groupEventsSubject.asObservable()
                                                                          .pipe(shareReplay(1));
 
-  private groupEventSubject: Subject<GroupEvent> = new Subject<GroupEvent>();
-  public groupEvent$: Observable<GroupEvent> = this.groupEventSubject.asObservable()
-                                                                     .pipe(shareReplay(1));
+  private groupEventSubject: BehaviorSubject<GroupEvent> = new BehaviorSubject<GroupEvent>(null);
+  public groupEvent$: Observable<GroupEvent> = this.groupEventSubject.asObservable();
 
   constructor() {
     this.load();
+  }
+
+  public selectGroupEvent(g: GroupEvent) {
+    this.groupEventSubject.next(g);
+    localStorage.setItem(lsCurrentGroupEvent, g.uuid);
+  }
+
+  public addExpense(e: Expense) {
+    this.groupEventSubject.value.expenses.push(e);
+    this.save();
   }
 
   private save() {

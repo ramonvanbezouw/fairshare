@@ -1,0 +1,10 @@
+<header>
+  <h2>{{(data.groupEvent$ | async)?.name}}</h2>
+  <div>{{(data.groupEvent$ | async)?.description}}</div>
+  <a href="#">change group</a>
+</header>
+<app-expense-list-item *ngFor="let e of (data.groupEvent$ | async).expenses" [expense]="e"></app-expense-list-item>
+<button routerLink="/add-expense">new expense</button>
+<footer>
+  {{(data.groupEvent$ | async) | totalExpenses}}
+</footer>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GroupEvent } from 'src/app/types/types';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-group-event',
@@ -8,10 +9,7 @@ import { GroupEvent } from 'src/app/types/types';
 })
 export class GroupEventComponent implements OnInit {
 
-  @Input()
-  public groupEvent: GroupEvent;
-
-  constructor() { }
+  constructor(public data: DataService) { }
 
   ngOnInit() {
   }

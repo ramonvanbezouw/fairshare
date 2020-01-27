@@ -1,0 +1,4 @@
+select a group
+<ng-container *ngFor="let g of data.groupEvents$ | async">
+  <app-group-event-list-item [groupEvent]="g" (click)="select(g)"></app-group-event-list-item>
+</ng-container>
