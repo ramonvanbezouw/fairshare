@@ -11,6 +11,7 @@ import { GroupEventListItemComponent } from './routes/group-event-overview/group
 import { TotalExpensesPipe } from './pipes/total-expenses.pipe';
 import { ExpenseAddComponent } from './routes/expense-add/expense-add.component';
 import { ExpenseListItemComponent } from './routes/group-event/expense-list-item/expense-list-item.component';
+import { CurrencyPipePipe } from './pipes/currency-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExpenseListItemComponent } from './routes/group-event/expense-list-item
     GroupEventListItemComponent,
     TotalExpensesPipe,
     ExpenseAddComponent,
-    ExpenseListItemComponent
+    ExpenseListItemComponent,
+    CurrencyPipePipe
   ],
   imports: [
     CommonModule,

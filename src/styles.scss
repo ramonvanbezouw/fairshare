@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
-
 html {
   width:100vw;
   height:100vh;
@@ -8,21 +7,44 @@ html {
   color:#eee;
   font-family: 'Fira Sans', sans-serif;
 }
+body {
+  margin:0;
+}
 .price {
   font-family: 'Fira Code', monospace;
-  background:#fff;
-  text-align:right;
-  border-radius:0.25rem;
-  padding:0.25rem;
-  margin:0.25rem 0;
-  &.negative {
-    color: #820f0f;
-  }
-  &.positive {
-    color: #0f8219;
-  }
 }
+// .price {
+//   font-family: 'Fira Code', monospace;
+//   background:#fff;
+//   text-align:right;
+//   border-radius:0.25rem;
+//   padding:0.25rem;
+//   margin:0.25rem 0;
+//   &.negative {
+//     color: #820f0f;
+//   }
+//   &.positive {
+//     color: #0f8219;
+//   }
+// }
 
 a {
   color:#fff;
+}
+*:focus {
+  outline:none;
+}
+
+input {
+  box-sizing:border-box;
+  background:transparent;
+  border:none;
+  border-bottom:1px solid #fff;
+  color:#fff;
+  font-size:2rem;
+  height:2rem;
+}
+
+input:focus {
+  border-bottom:2px solid #fff;
 }

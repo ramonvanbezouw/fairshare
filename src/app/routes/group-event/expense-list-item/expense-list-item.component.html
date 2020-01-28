@@ -1,1 +1,3 @@
-{{expense.payer.name}} {{expense.price}}
+<h3>{{expense.description}}</h3>
+<h4>{{expense.payer.name}}</h4>
+<div class="price">{{expense.price | currencyPipe}}</div>
