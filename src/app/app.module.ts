@@ -12,6 +12,7 @@ import { TotalExpensesPipe } from './pipes/total-expenses.pipe';
 import { ExpenseAddComponent } from './routes/expense-add/expense-add.component';
 import { ExpenseListItemComponent } from './routes/group-event/expense-list-item/expense-list-item.component';
 import { CurrencyPipePipe } from './pipes/currency-pipe.pipe';
+import { PersonCreditComponent } from './routes/person-credit/person-credit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CurrencyPipePipe } from './pipes/currency-pipe.pipe';
     TotalExpensesPipe,
     ExpenseAddComponent,
     ExpenseListItemComponent,
-    CurrencyPipePipe
+    CurrencyPipePipe,
+    PersonCreditComponent
   ],
   imports: [
     CommonModule,

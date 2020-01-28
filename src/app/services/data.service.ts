@@ -38,7 +38,6 @@ export class DataService {
 
   private load() {
     const groupEvents = localStorage.getItem(lsGroupEvents);
-    console.log(groupEvents);
     if (groupEvents !== null) {
       this.groupEventsSubject.next(JSON.parse(groupEvents));
       const currentGroupEvent = localStorage.getItem(lsCurrentGroupEvent);

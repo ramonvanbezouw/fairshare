@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
+
 html {
   width:100vw;
   height:100vh;
@@ -35,7 +36,7 @@ a {
   outline:none;
 }
 
-input {
+input, select {
   box-sizing:border-box;
   background:transparent;
   border:none;
@@ -43,7 +44,11 @@ input {
   color:#fff;
   font-size:2rem;
   height:2rem;
+  option {
+    color:#0f4c82;
+  }
 }
+
 
 input:focus {
   border-bottom:2px solid #fff;

@@ -1,0 +1,17 @@
+.shares {
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  .person {
+    opacity:0.5;
+    &.active {
+      opacity:1;
+    }
+    display:grid;
+    place-items: center;
+    img {
+      width:2rem;
+      height:2rem;
+      background:#fff;
+    }
+  }
+}

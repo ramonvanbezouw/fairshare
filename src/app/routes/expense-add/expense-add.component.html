@@ -1,11 +1,13 @@
 <h2>Adding expense to {{(data.groupEvent$ | async).name}}</h2>
-<input type="text" [(ngModel)]="expense.description">
-<h3>Cost</h3>
-<input type="number" [(ngModel)]="expense.price"/>
-<ng-container *ngFor="let s of expense.shares">
-  <h4>{{s.person.name}}</h4>
-  <input type="range" [(ngModel)]="s.portion" min="0" max="1" step="0.1">
-</ng-container>
+<select [(ngModel)]="expense.payer">
+  <option *ngFor="let p of (data.groupEvent$ | async).persons" [ngValue]="p">{{p.name}}</option>
+</select> betaalde <input type="number" [(ngModel)]="expense.price"/> voor <input type="text" [(ngModel)]="expense.description">
+<div class="shares">
+  <div class="person" [ngClass]="{active: s.portion > 0}" *ngFor="let s of expense.shares" (click)="s.portion = (s.portion === 0) ? 1 : 0">
+    <img />
+    <h4>{{s.person.name}} {{s.portion}}</h4>
+  </div>
+</div>
 <br/>
 <br/>
 <br/>
